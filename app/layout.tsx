@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import AIWebsiteLanding from "@/components/navbar";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "AutoVerse",
-  description: "Plug & Play Agentic AI application to automate your existing workflows.",
+  description: "Plug & play AI agents for your applications.",
 };
 
 export default function RootLayout({
@@ -27,6 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AIWebsiteLanding />
         {children}
       </body>
     </html>
