@@ -19,20 +19,20 @@ export default function AIWebsiteLanding() {
   }, []);
 
   return (
-    <div className="bg-black text-white antialiased">
-      {/* NAVBAR */}
+    <div className="bg-black text-white antialiased sticky top-0 w-full z-50">
+     
       <header className="border-b border-white/6">
         <nav className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-5">
              
               <Link href="/" className="flex items-center gap-4">
                 <Image
                   src="/logo.png"
                   alt="AutoVerse Logo"
-                  width={140}  
-                  height={140} 
-                  className="w-12 h-12 md:w-14 md:h-14 object-contain" 
+                  width={60}  
+                  height={60} 
+                  className="w-18 h-18 md:w-20 md:h-20 object-contain" 
                   priority
                 />
                 <span className="sr-only">AutoVerse</span>
@@ -40,8 +40,8 @@ export default function AIWebsiteLanding() {
                
               </Link>
 
-              {/* Primary nav - desktop */}
-              <div className="hidden md:flex md:items-center md:space-x-1 ml-4">
+       
+              <div className="hidden md:flex md:items-center md:space-x-2 ml-4">
                 <NavLink href="/features">Features</NavLink>
                 <NavLink href="/pricing">Pricing</NavLink>
                 <NavLink href="/docs">Docs</NavLink>
@@ -49,14 +49,13 @@ export default function AIWebsiteLanding() {
               </div>
             </div>
 
-            {/* Right side */}
+
             <div className="flex items-center gap-3">
-              {/* CTA */}
+          
               <Link href="/dashboard" className="hidden md:inline-flex items-center rounded-md bg-purple-900 px-3 py-1.5 text-sm font-medium text-white shadow-sm hover:bg-purple-700 transition">
                 Dashboard
               </Link>
 
-              {/* Mobile menu button */}
               <button
                 aria-label="Toggle menu"
                 className="md:hidden p-2 rounded-md hover:bg-white/6"
@@ -67,14 +66,13 @@ export default function AIWebsiteLanding() {
                 </svg>
               </button>
 
-              {/* Notifications (placeholder) */}
               <button className="hidden md:inline-flex p-2 rounded-md hover:bg-white/6" aria-label="Notifications">
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
                   <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
 
-              {/* User dropdown */}
+  
               <div className="relative" ref={userRef}>
                 <button
                   onClick={() => setUserOpen((s) => !s)}
@@ -101,7 +99,7 @@ export default function AIWebsiteLanding() {
           </div>
         </nav>
 
-        {/* Mobile menu panel */}
+    
         {mobileOpen && (
           <div className="md:hidden border-t border-white/6">
             <div className="px-3 pt-2 pb-3 space-y-1">
@@ -122,17 +120,26 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
   return (
     <Link
       href={href}
-      className="relative px-3 py-2 text-sm text-white transition-colors duration-300 
-                 hover:text-purple-700 
-                 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full 
-                 after:origin-left after:scale-x-0 after:bg-purple-700 
-                 after:transition-transform after:duration-300 
-                 hover:after:scale-x-100"
+      className="
+        group relative px-3 py-2 text-sm text-white 
+        transition-all duration-300 ease-out
+
+        hover:text-purple-600
+        hover:-translate-y-0.5 
+        hover:drop-shadow-[0_0_6px_rgba(168,85,247,0.6)]
+
+        after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full 
+        after:origin-left after:scale-x-0 after:bg-purple-700 
+        after:transition-transform after:duration-300 after:ease-out
+        group-hover:after:scale-x-100
+      "
     >
       {children}
     </Link>
   );
 }
+
+
 
 function MobileLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
