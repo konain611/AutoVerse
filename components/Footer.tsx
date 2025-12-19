@@ -4,16 +4,16 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="w-full bg-black text-gray-300 py-12 border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-2">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 px-2">
             <h3 className="text-xl font-semibold text-white mb-4">AutoVerse</h3>
             <p className="text-gray-400 max-w-md">
               Plug & play AI agents for your applications. Automate tasks, provide instant support, and deliver personalized experiences to your users.
             </p>
           </div>
 
-          <div>
+          <div className="px-2">
             <h3 className="text-xl font-semibold text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link href="/features" className="hover:text-white transition-colors">Features</Link></li>
@@ -24,7 +24,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="px-2">
             <h3 className="text-xl font-semibold text-white mb-4">Stay Updated</h3>
             <p className="text-gray-400 mb-4">Get the latest product updates and news.</p>
 

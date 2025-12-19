@@ -5,8 +5,8 @@ export default function FeaturesPage() {
   return (
     <div className="bg-black text-white">
       {/* Page Header */}
-      <section className="relative w-full bg-black text-white py-24 md:py-32">
-        <div className="absolute inset-0 bg-grid-purple-500/10 bg-[size:20px_20px] [mask-image:linear-gradient(to_bottom,white_10%,transparent_100%)]"></div>
+      <section className="relative w-full bg-[#05050D] text-white py-24 md:py-32 ">
+        <div className="absolute inset-0 bg-grid-purple-500/10 bg-size-[20px_20px] mask-[linear-gradient(to_bottom,white_10%,transparent_100%)]"></div>
         <div className="relative max-w-6xl mx-auto text-center px-6">
           <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
             Powerful Features, Seamless Integration

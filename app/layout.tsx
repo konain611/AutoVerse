@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   description: "Plug & play AI agents for your applications.",
 };
 
+export const dynamic = 'force-dynamic';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,12 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${roboto_mono.variable} antialiased bg-black text-white`}
-      >
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={`${inter.variable} ${roboto_mono.variable} antialiased bg-black text-white`}>
+          <Navbar />
+          {children}
+          <Footer />
       </body>
     </html>
   );
